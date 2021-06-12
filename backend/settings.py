@@ -25,7 +25,7 @@ SECRET_KEY = 'fkp1s0(&6@orvz!l3^2js2k0wr8_%7#630el8!zww^+p!iz&d='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://codespark-backend.herokuapp.com/']
+ALLOWED_HOSTS = ['codespark-backend.herokuapp.com']
 
 
 # Application definition
