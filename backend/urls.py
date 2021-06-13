@@ -18,13 +18,25 @@ from django.urls import path,include
 from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
-from article import views
+from article import views as article_views
+from trending import views as trending_views
+from popular import views as popular_views
+from latest import views as latest_views
+
+
 
 router = routers.DefaultRouter()
-router.register(r'article', views.ArticleView, 'article')
+router.register(r'article', article_views.ArticleView, 'article')
+router.register(r'trending', trending_views.TrendingView, 'trending')
+router.register(r'popular', popular_views.PopularView, 'popular')
+router.register(r'latest', latest_views.LatestView, 'latest')
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('',include('article.urls') ),
+    path('',include('article.urls')),
+ 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

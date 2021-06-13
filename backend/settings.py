@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fkp1s0(&6@orvz!l3^2js2k0wr8_%7#630el8!zww^+p!iz&d='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['codespark-backend.herokuapp.com']
-
+#DEBUG = False
+DEBUG = True
+#ALLOWED_HOSTS = ['codespark-backend.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'trending',
+    'popular',
+    'latest',
     'corsheaders',
     'rest_framework',
 ]
@@ -125,7 +128,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = [
-     'https://adityaray.netlify.app/'
+     'http://localhost:3000'
 ]
 
+#CORS_ORIGIN_WHITELIST = [
+#    'https://adityaray.netlify.app/'
+#]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
